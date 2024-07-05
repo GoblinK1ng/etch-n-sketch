@@ -15,28 +15,33 @@ function createGrid(size){
     }
 }
 
+function mouseOverGrid(){
+    const grid = document.querySelectorAll(".column");
+
+    grid.forEach((div) =>{
+        div.addEventListener("mouseover", ()=>{
+            div.setAttribute("class","column red");
+        });
+    });
+
+}
+
 createGrid(50);
+mouseOverGrid();
 
 reset.addEventListener("click",()=>{
     while (container.hasChildNodes()){
         let child = document.querySelector(".row");
-        console.log(child);
+
         if (child == null){
             let newSize = prompt("Enter a size of the new grid");
             createGrid(newSize);
+            mouseOverGrid();
             break;
         }
         container.removeChild(child);
     }
 
     
-    
 });
 
-const grid = document.querySelectorAll(".column");
-
-grid.forEach((div) =>{
-    div.addEventListener("mouseover", ()=>{
-        div.setAttribute("class","column red");
-    });
-});
