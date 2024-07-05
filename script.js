@@ -1,4 +1,5 @@
 const container = document.querySelector("div");
+const reset = document.querySelector("button");
 
 function createGrid(size){
     for (let i = 0; i < size; i++){
@@ -15,6 +16,22 @@ function createGrid(size){
 }
 
 createGrid(50);
+
+reset.addEventListener("click",()=>{
+    while (container.hasChildNodes()){
+        let child = document.querySelector(".row");
+        console.log(child);
+        if (child == null){
+            let newSize = prompt("Enter a size of the new grid");
+            createGrid(newSize);
+            break;
+        }
+        container.removeChild(child);
+    }
+
+    
+    
+});
 
 const grid = document.querySelectorAll(".column");
 
