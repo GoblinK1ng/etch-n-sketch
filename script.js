@@ -14,4 +14,12 @@ function createGrid(size){
     }
 }
 
-createGrid(20);
+createGrid(50);
+
+const grid = document.querySelectorAll(".column");
+
+grid.forEach((div) =>{
+    div.addEventListener("mouseover", ()=>{
+        div.setAttribute("class","column red");
+    });
+});
