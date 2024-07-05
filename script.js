@@ -35,6 +35,9 @@ reset.addEventListener("click",()=>{
 
         if (child == null){
             let newSize = prompt("Enter a size of the new grid");
+            while (newSize == null || newSize > 100 || newSize < 0){
+                newSize = prompt("INVALID!\nEnter a size of the new grid");
+            }
             createGrid(newSize);
             mouseOverGrid();
             break;
