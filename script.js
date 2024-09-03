@@ -17,10 +17,12 @@ function createGrid(size){
 
 function mouseOverGrid(){
     const grid = document.querySelectorAll(".column");
-
+    
     grid.forEach((div) =>{
         div.addEventListener("mouseover", ()=>{
-            div.setAttribute("class","column red");
+
+            div.style.backgroundColor = "rgb("+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
+            //div.style.backgroundColor = "rgb("+50+","+50+","+50+")";
         });
     });
 
